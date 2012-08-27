@@ -52,11 +52,11 @@
 		    android:layout_below="@+id/top_layer"
 		    >
 			 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-				    android:id="@+id/image_source_frame"
-				    android:layout_width="wrap_content"
-	    			android:layout_height="wrap_content"
-	    			
-				    >
+			    android:id="@+id/image_source_frame"
+			    android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			
+			    >
 				<GridView xmlns:android="http://schemas.android.com/apk/res/android" 
 				    android:id="@+id/image_grid_view"
 				    android:layout_width="wrap_content" 
@@ -69,7 +69,7 @@
 				    android:layout_weight="0.8"
 				/>
 				<GridView xmlns:android="http://schemas.android.com/apk/res/android" 
-				    android:id="@+id/icon_load_grid"
+				    android:id="@+id/staging_area"
 				    android:layout_width="wrap_content" 
 				    android:layout_height="fill_parent"
 				    android:numColumns="@integer/num_columns"
@@ -78,6 +78,8 @@
 				    android:stretchMode="columnWidth"
 				    android:gravity="center"
 				    android:layout_weight="0.8"
+				    android:visibility="gone"
+				    android:background="@color/blue"
 				/>
 	
 			   </FrameLayout>

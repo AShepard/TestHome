@@ -80,7 +80,6 @@ public final class R {
         public static final int delete_zone_view=0x7f090007;
         public static final int drag_layer=0x7f090001;
         public static final int grid_layer=0x7f09000c;
-        public static final int icon_load_grid=0x7f09000d;
         public static final int image_grid_view=0x7f090004;
         public static final int image_source_frame=0x7f090003;
         public static final int label=0x7f090000;
@@ -88,6 +87,7 @@ public final class R {
         public static final int menu_add_app=0x7f09000e;
         public static final int menu_settings=0x7f090010;
         public static final int menu_wallpaper=0x7f09000f;
+        public static final int staging_area=0x7f09000d;
         public static final int textView1=0x7f09000b;
         public static final int top_layer=0x7f090009;
         public static final int top_layer_frame=0x7f09000a;

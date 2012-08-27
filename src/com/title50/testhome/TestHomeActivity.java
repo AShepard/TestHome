@@ -107,7 +107,10 @@ public class TestHomeActivity extends Activity
     private ImageCell mLastNewCell = null;    // The last ImageCell added to the screen when Add Image is clicked.
     private boolean mLongClickStartsDrag = true;   // If true, it takes a long click to start the drag operation.
                                                     // Otherwise, any touch event starts a drag.
-
+    private View m_staged_icon = null;
+    private boolean m_is_staging = false;
+    
+    
     public static final boolean Debugging = false;   // Use this to see extra toast messages.
     
     /** Called when the activity is first created. */
@@ -337,6 +340,8 @@ public class TestHomeActivity extends Activity
     {
         if (mLastNewCell != null) mLastNewCell.setVisibility (View.GONE);
 
+       
+        
         FrameLayout imageHolder = (FrameLayout) findViewById (R.id.image_source_frame);
         if (imageHolder != null) {
            FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams (LayoutParams.WRAP_CONTENT, 
@@ -355,7 +360,15 @@ public class TestHomeActivity extends Activity
            newView.setOnClickListener(this);
            newView.setOnLongClickListener(this);
            newView.setOnTouchListener (this);
-
+           
+           m_is_staging = true;
+           m_staged_icon = newView;
+           
+           GridView staging_area = (GridView) findViewById(R.id.staging_area);
+           staging_area.setVisibility(View.VISIBLE);
+           
+        } else {
+        	toast("Error: No image holder");
         }
     }
 
@@ -500,6 +513,7 @@ public class TestHomeActivity extends Activity
 
 
     /**
+     * TODO change this description, maybe rethink
      * This is the starting point for a drag operation if mLongClickStartsDrag is false.
      * It looks for the down event that gets generated when a user touches the screen.
      * Only that initiates the drag-drop sequence.
@@ -509,8 +523,16 @@ public class TestHomeActivity extends Activity
     public boolean onTouch (View v, MotionEvent ev) 
     {
         // If we are configured to start only on a long click, we are not going to handle any events here.
-        if (mLongClickStartsDrag) return false;
-
+        if (!m_is_staging) return false;
+        
+        GridView staging_area = (GridView)findViewById(R.id.staging_area);
+        staging_area.setVisibility(View.GONE);
+        
+        if(m_staged_icon == v) {
+        	startDrag((ImageCell)m_staged_icon);
+        }
+        
+        /* TODO: dont need?
         boolean handledHere = false;
 
         final int action = ev.getAction();
@@ -519,8 +541,8 @@ public class TestHomeActivity extends Activity
         if (action == MotionEvent.ACTION_DOWN) {
            //handledHere = startDrag (v);
         }
-        
-        return handledHere;
+        */
+        return true;
     }   
 
     /**
