@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.title50.testhome.DragLayer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher"
+    android:id="@+id/drag_layer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/main_screen"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    >
+	    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:id="@+id/top_layer"
+		    android:orientation="vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    >
+		    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			    android:id="@+id/top_layer_frame"
+			    android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+			    android:layout_alignParentTop="true"
+			    >
+				<TextView
+				    android:id="@+id/textView1"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:text="I am a place holder" 
+				    android:visibility="gone"
+					    />
+			    <com.title50.testhome.DeleteZone
+				    android:id="@+id/delete_zone_view"
+				    android:layout_width="60dp" 
+				    android:layout_height="60dp" 
+				    android:layout_gravity="center"
+				    android:src="@drawable/delete_zone"
+				    android:visibility="gone"
+				/>
+		     </FrameLayout>
+		     
+	     </RelativeLayout>
+	     
+	     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:id="@+id/grid_layer"
+		    android:orientation="vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/top_layer"
+		    >
+			 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				    android:id="@+id/image_source_frame"
+				    android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+	    			
+				    >
+				<GridView xmlns:android="http://schemas.android.com/apk/res/android" 
+				    android:id="@+id/image_grid_view"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="fill_parent"
+				    android:numColumns="@integer/num_columns"
+				    android:verticalSpacing="2dip"
+				    android:horizontalSpacing="2dip"
+				    android:stretchMode="columnWidth"
+				    android:gravity="center"
+				    android:layout_weight="0.8"
+				/>
+				<GridView xmlns:android="http://schemas.android.com/apk/res/android" 
+				    android:id="@+id/icon_load_grid"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="fill_parent"
+				    android:numColumns="@integer/num_columns"
+				    android:verticalSpacing="2dip"
+				    android:horizontalSpacing="2dip"
+				    android:stretchMode="columnWidth"
+				    android:gravity="center"
+				    android:layout_weight="0.8"
+				/>
+	
+			   </FrameLayout>
+			</RelativeLayout>
+			<Button
+				    android:id="@+id/button_add_image"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerHorizontal="true"
+				    android:onClick="onClickAddImage"
+				    android:text="Add image"
+				    android:layout_below="@+id/grid_layer"/>
+	</RelativeLayout>
+</com.title50.testhome.DragLayer>

@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- android:icon="@drawable/ic_action_refresh" -->
+    <item android:id="@+id/menu_add_app"
+        android:title="Add App"
+        android:orderInCategory="0" 
+        />
+     <!-- android:icon="@drawable/ic_action_search"-->
+    <item android:id="@+id/menu_wallpaper"
+        android:title="Choose Wallpaper"
+        android:orderInCategory="1"
+        />
+
+	<!--android:icon="@drawable/ic_menu_share"-->
+    <item android:id="@+id/menu_settings"
+        android:title="Settings"
+        android:orderInCategory="2"
+        />
+</menu>

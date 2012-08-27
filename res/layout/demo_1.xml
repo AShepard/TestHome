@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.title50.testhome.DragLayer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher"
+    android:id="@+id/drag_layer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/main_screen"
+	    android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    >
+	
+		    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				    android:id="@+id/image_source_frame"
+				    android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+				    android:layout_alignParentTop="true"
+				    
+				    >
+				<GridView xmlns:android="http://schemas.android.com/apk/res/android" 
+				    android:id="@+id/image_grid_view"
+				    android:layout_width="wrap_content" 
+				    android:layout_height="fill_parent"
+				    android:numColumns="@integer/num_columns"
+				    android:verticalSpacing="2dip"
+				    android:horizontalSpacing="2dip"
+				    android:stretchMode="columnWidth"
+				    android:gravity="center"
+				    android:layout_weight="0.8"
+				/>
+				<ImageView  
+				        android:layout_width="60dp" 
+				        android:layout_height="60dp" 
+				        android:layout_gravity="center"
+				       />
+			</FrameLayout>
+			<LinearLayout 
+			   android:id="@+id/bottom_part"
+			   android:orientation="horizontal"
+			   android:layout_centerHorizontal="true"
+			   android:layout_width="fill_parent" 
+			   android:layout_height="fill_parent"
+			   android:layout_below="@+id/image_source_frame"
+			   >
+				<Button
+				    android:id="@+id/button_add_image"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerHorizontal="true"
+				    android:onClick="onClickAddImage"
+				    android:text="Add image"/>
+				<com.title50.testhome.DeleteZone
+				    android:id="@+id/delete_zone_view"
+				    android:layout_width="60dp" 
+				    android:layout_height="60dp" 
+				    android:layout_gravity="center"
+				    android:src="@drawable/delete_zone"
+				    
+				/>
+				
+			</LinearLayout>
+	
+	</RelativeLayout>
+</com.title50.testhome.DragLayer>
